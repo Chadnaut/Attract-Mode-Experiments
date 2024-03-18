@@ -1,6 +1,6 @@
 // surface contains artwork
 local s = fe.add_surface(fe.layout.width, fe.layout.height * 0.6);
-s.mipmap = true; // <-- required for LOD blur
+s.mipmap = true; // <-- required for blur shader
 
 // some artwork for the surface
 local cols = 4;
@@ -15,11 +15,15 @@ for (local x=0; x<cols+1; x++) {
     }
 }
 
-// the reflection surface
-local r = fe.add_surface(s.width, fe.layout.height - s.height);
+// clone the artwork surface
+local r = fe.add_clone(s);
 r.y = s.height;
+r.height = fe.layout.height - s.height;
+r.subimg_y = r.subimg_height;
+r.subimg_height *= -1;
+
+// shader for blurring only
 r.shader = ::fe.add_shader(Shader.Fragment, "shader.frag");
-r.shader.set_texture_param("source", s); // <-- pass in the artwork surface
 r.shader.set_param("blur", 0.0, 4.0); // from & to blur strength
 
 // floor overlay for effect
