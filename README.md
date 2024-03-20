@@ -16,6 +16,12 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 
 [DisplayOffset](./layouts/Experiment.DisplayOffset/layout.nut) adds a `display_offset` property which is used to shift assets by display, works like `filter_offset` and `index_offset`.
 
+### Mask
+
+![Example](./layouts/Experiment.Mask/example.png)
+
+[Mask](./layouts/Experiment.Mask/layout.nut) uses a second texture to multiply the target image to create cutouts and filter colours.
+
 ### Reflection
 
 ![Example](./layouts/Experiment.Reflection/example.png)
