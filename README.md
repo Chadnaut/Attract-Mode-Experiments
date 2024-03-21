@@ -16,6 +16,12 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 
 [DisplayOffset](./layouts/Experiment.DisplayOffset/layout.nut) adds a `display_offset` property which is used to shift assets by display, works like `filter_offset` and `index_offset`.
 
+### LCD
+
+![Example](./layouts/Experiment.LCD/example.png)
+
+[LCD](./layouts/Experiment.LCD/layout.nut) uses a shader to pixelate and monotone the image to create an LCD effect. Good for some logos, not so good for others.
+
 ### Mask
 
 ![Example](./layouts/Experiment.Mask/example.png)
