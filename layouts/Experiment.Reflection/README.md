@@ -1,11 +1,11 @@
 # Experiment Reflections
 
 > Chadnaut 2024  
-> https://github.com/Chadnaut/Attract-Mode-Modules
+> https://github.com/Chadnaut/Attract-Mode-Experiments
 
 ![Example](example.png)
 
-A `shader` that creates a mipmap based blur effect. The actual mirror is simply a clone with a flipped subimg.
+A shader that creates a mipmap based blur effect. The actual mirror is simply a clone with a flipped subimg.
 
 ## Files
 
