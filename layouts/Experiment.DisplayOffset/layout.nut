@@ -1,17 +1,3 @@
-/*
-    WARNING:
-    - All your displays must use this layout or it will not work
-    - Editing attract.cfg is easiest -> layout Experiment.DisplayOffset
-
-    DisplayCache is SLOW as it parses all available displays!
-    - Around 1 second per 1000 games
-
-    Controls
-    - left/right - prev/next game
-    - up/down - prev/next display
-    - plus whatever you have configured for prev/next filter
-*/
-
 fe.do_nut("display_object.nut");
 fe.do_nut("display_cache.nut");
 
