@@ -3,6 +3,9 @@ scripts/
 scripts/link/*.ini
 *.code-workspace
 
+Experiment.NineSlice/
+Experiment.Obfuscate/
+
 attract.am
 attract.cfg
 last_run.log

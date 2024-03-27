@@ -16,3 +16,4 @@ At worst you'll need to edit `attract.cfg` to restore your previous layout - use
 - [LCD](./layouts/Experiment.LCD/README.md) - A shader that pixelates and monotones the image to create an LCD effect. Good for some logos, not so good for others.
 - [Mask](./layouts/Experiment.Mask/README.md) - A shader that uses a second texture to multiply the target image, creates cutout and filtering effects.
 - [Reflection](./layouts/Experiment.Reflection/README.md) - A shader that creates a mipmap based blur effect. The actual mirror is simply a clone with a flipped subimg.
+- [RetroZoom](./layouts/Experiment.RetroZoom/README.md) - Scale an image over a non-clearing surface to produce a retro zoom effect.
