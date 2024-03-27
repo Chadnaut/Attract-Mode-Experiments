@@ -4,6 +4,7 @@ surf.set_pos(fe.layout.width/4, fe.layout.height/4);
 local wheel = surf.add_artwork("wheel", surf.width/2, surf.height, 0, 0);
 wheel.set_anchor(0.5, 1.0);
 wheel.preserve_aspect_ratio = true;
+wheel.mipmap = true;
 
 local scale = 0.0;
 fe.add_ticks_callback("on_tick");
