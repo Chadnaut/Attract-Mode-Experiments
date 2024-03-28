@@ -1,7 +1,7 @@
 # Attract Mode Experiments
 
-> Attract-Mode Experiments
-> Chadnaut 2024
+> Attract-Mode Experiments  
+> Chadnaut 2024  
 > https://github.com/Chadnaut/Attract-Mode-Experiments
 
 ## Disclaimer

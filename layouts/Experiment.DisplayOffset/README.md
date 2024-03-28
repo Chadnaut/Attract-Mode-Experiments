@@ -1,6 +1,6 @@
 # Experiment DisplayOffset
 
-> Chadnaut 2024
+> Chadnaut 2024  
 > https://github.com/Chadnaut/Attract-Mode-Experiments
 
 ![Example](example.png)
