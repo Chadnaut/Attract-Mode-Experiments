@@ -9,5 +9,5 @@ A shader that pixelates and monotones the image to create an LCD effect. Good fo
 
 ## Files
 
-- `layout.nut`  The example layout
-- `lcd.nut`  The shader
+- `layout.nut` - The example layout
+- `lcd.frag` - The shader

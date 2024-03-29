@@ -9,6 +9,6 @@ A shader that creates a mipmap based blur effect. The actual mirror is simply a 
 
 ## Files
 
-- `floor.png`  Image that overlays the reflection
-- `layout.nut`  The example layout
-- `shader.nut`  The blur shader
+- `floor.png` - Image that overlays the reflection
+- `layout.nut` - The example layout
+- `reflection.nut` - The blur shader

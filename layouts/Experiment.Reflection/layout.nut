@@ -23,7 +23,7 @@ r.subimg_y = r.subimg_height;
 r.subimg_height *= -1;
 
 // shader for blurring only
-r.shader = ::fe.add_shader(Shader.Fragment, "shader.frag");
+r.shader = ::fe.add_shader(Shader.Fragment, "reflection.frag");
 r.shader.set_param("blur", 0.0, 4.0); // from & to blur strength
 
 // floor overlay for effect

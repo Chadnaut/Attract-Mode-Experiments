@@ -13,4 +13,6 @@ Scale an image over a non-clearing surface to produce a retro zoom effect.
 
 ## Files
 
-- `layout.nut`  The example layout
+- `layout.nut` - The example layout
+- `layout2.nut` - The example layout
+- `layout3.nut` - The example layout
