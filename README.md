@@ -16,6 +16,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 |<img src="./layouts/Experiment.LCD/example.png" width="100" />|[LCD](./layouts/Experiment.LCD/README.md) - A shader that pixelates and monotones the image to create an LCD effect. Good for some logos, not so good for others.|
 |<img src="./layouts/Experiment.Reflection/example.png" width="100" />|[Reflection](./layouts/Experiment.Reflection/README.md) - A shader that creates a mipmap based blur effect. The actual mirror is simply a clone with a flipped subimg.|
 |<img src="./layouts/Experiment.RetroZoom/example.png" width="100" />|[RetroZoom](./layouts/Experiment.RetroZoom/README.md) - Scale an image over a non-clearing surface to produce a retro zoom effect.|
+|<img src="./layouts/Experiment.Sand/example.png" width="100" />|[Sand](./layouts/Experiment.Sand/README.md) - Something different with a surface shader feedback loop - falling sand art.|
 
 ## Something Missing?
 
