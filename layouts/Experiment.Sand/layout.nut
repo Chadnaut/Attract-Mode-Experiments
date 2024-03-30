@@ -1,18 +1,17 @@
-fe.add_text(split(fe.script_dir, "/").top(), 0, fe.layout.height * 19 / 20, fe.layout.width, fe.layout.height / 20).align = Align.BottomLeft;
-//===================================================
-
 local a = ::fe.add_surface(fe.layout.width, fe.layout.height);
 
 a.add_text(split(fe.script_dir, "/").top(), 0, fe.layout.height * 19 / 20, fe.layout.width, fe.layout.height / 20).align = Align.BottomLeft;
 a.add_text("Sand Shader", 0, fe.layout.height * 0.3, fe.layout.width, fe.layout.height / 5);
 a.add_text("Move the paddle with your mouse", 0, fe.layout.height * 0.55, fe.layout.width, fe.layout.height / 15);
+a.add_text(split(fe.script_file, ".")[0], 0, fe.layout.height * 19 / 20, fe.layout.width, fe.layout.height / 20).align = Align.BottomRight;
 
-// generates sand
+// sand
 local sand = a.add_rectangle(0, 0, a.width, 1);
 sand.set_rgb(0, 0, 255);
 
 // paddle
 local paddle = a.add_rectangle(100, 100, fe.layout.width / 5, fe.layout.height / 40);
+paddle.set_anchor(0.5, 0.5);
 
 // floor
 local floor = a.add_rectangle(0, fe.layout.height-1, fe.layout.width, 1);
@@ -28,9 +27,9 @@ d.shader.set_texture_param("texture2", a);
 d.shader.set_param("size", d.width, d.height);
 c.set_pos(0, 0);
 b.visible = false;
+a.blend_mode = BlendMode.Alpha;
 
 local random = @(min, max) min + rand() * (max - min) / RAND_MAX;
-local click = false;
 
 fe.add_ticks_callback("on_tick");
 function on_tick(ttime) {
