@@ -13,7 +13,7 @@ wheel.preserve_aspect_ratio = true;
 wheel.mipmap = true;
 
 local s2 = Retention(surf);
-s2.persistance = 0.99;
+s2.persistence = 0.99;
 s2.falloff = 0.005;
 s2.zorder = 0; // 0 == additive blowout
 

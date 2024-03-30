@@ -20,7 +20,7 @@ wheel2.blue = 0;
 wheel2.zorder = 1;
 
 local s2 = Retention(surf);
-s2.persistance = 1.0;
+s2.persistence = 1.0;
 
 local scale = 0.0;
 local scale2 = -1.0;
