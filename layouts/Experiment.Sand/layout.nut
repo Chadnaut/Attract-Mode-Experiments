@@ -1,7 +1,7 @@
 local a = ::fe.add_surface(fe.layout.width, fe.layout.height);
 
 a.add_text(split(fe.script_dir, "/").top(), 0, fe.layout.height * 19 / 20, fe.layout.width, fe.layout.height / 20).align = Align.BottomLeft;
-a.add_text("Sand Shader", 0, fe.layout.height * 0.3, fe.layout.width, fe.layout.height / 5);
+a.add_text("Sand Shader", 0, fe.layout.height * 0.3, fe.layout.width, fe.layout.height / 5.5);
 a.add_text("Move the paddle with your mouse", 0, fe.layout.height * 0.55, fe.layout.width, fe.layout.height / 15);
 a.add_text(split(fe.script_file, ".")[0], 0, fe.layout.height * 19 / 20, fe.layout.width, fe.layout.height / 20).align = Align.BottomRight;
 
@@ -11,7 +11,7 @@ sand.set_rgb(0, 0, 255);
 
 // paddle
 local paddle = a.add_rectangle(100, 100, fe.layout.width / 5, fe.layout.height / 40);
-paddle.set_anchor(0.5, 0.5);
+paddle.set_anchor(0.5, 0);
 
 // floor
 local floor = a.add_rectangle(0, fe.layout.height-1, fe.layout.width, 1);
