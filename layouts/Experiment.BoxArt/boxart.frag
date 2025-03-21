@@ -2,7 +2,7 @@
     BoxArt Reflection Shader
 
     @summary Draws a reflection under box art images.
-    @version 0.1.0 2025-03-21
+    @version 0.1.1 2025-03-21
     @author Chadnaut
     @url https://github.com/Chadnaut/Attract-Mode-Modules
 
@@ -59,7 +59,7 @@ float get_y(vec2 uv) {
 // Alpha composite b over a
 vec4 composite_alpha(vec4 a, vec4 b) {
     float c = b.a + a.a * (1.0 - b.a);
-    return vec4(clamp((b.a * b.rgb + a.a * a.rgb * (1.0 - b.a)) / c, 0.0, 1.0), c);
+    return vec4((b.a * b.rgb + a.a * a.rgb * (1.0 - b.a)) / c, c);
 }
 
 void main() {
@@ -75,12 +75,13 @@ void main() {
     if (d > 0) {
         // adjust uv if below the line
         uv.y = y - d;
-        float lod = mix(mirror_blur.s, mirror_blur.t, d);
-        float a = max(0.0, mix(mirror_opacity.s, mirror_opacity.t, d));
 
-        // composite the reflection colour
+        // compose the reflection colour
         if (!is_outside(uv)) {
+            float lod = clamp(mix(mirror_blur.s, mirror_blur.t, d), 0.0, 1000.0);
+            float a = clamp(mix(mirror_opacity.s, mirror_opacity.t, d), 0.0, 1.0);
             vec4 col2 = texture2D(texture, uv, lod) * vec4(vec3(1.0), a);
+
             col = bool(mirror_over)
                 ? composite_alpha(col, col2)
                 : composite_alpha(col2, col);
