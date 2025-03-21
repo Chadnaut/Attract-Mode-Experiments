@@ -1,4 +1,4 @@
-# Experiment DisplayOffset
+# Experiment BoxArt
 
 > Chadnaut 2025  
 > https://github.com/Chadnaut/Attract-Mode-Experiments  
