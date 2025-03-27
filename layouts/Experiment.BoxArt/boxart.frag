@@ -2,7 +2,7 @@
     BoxArt Reflection Shader
 
     @summary Draws a reflection under box art images.
-    @version 0.1.1 2025-03-21
+    @version 0.2.0 2025-03-27
     @author Chadnaut
     @url https://github.com/Chadnaut/Attract-Mode-Modules
 
@@ -19,29 +19,49 @@
        ||       |
      P1\|_______|
         P2     P3
+
+    Note:
+    - Artwork scaling uses nearest-neighbor
+      - Use `mipmap = true` for smoother results
+    - Mirror uses the same LOD as scaled Artwork
+      - When `mirror_scale` < 1.0 the reflection will contain nearest-neighbor aliasing
+      - Use `mirror_blur` setting for smoother results
+    - Anisotropic Filtering will *vastly* improve the `mirror_blur` quality
+      - Configure > General > Anisotropic Filter
 */
 #version 120
+
+#define DELTA 1e-6
+
 uniform sampler2D texture;
 
-uniform vec2 mirror_p1 = vec2(0.0); // Point P1
-uniform vec2 mirror_p2 = vec2(0.0); // Point P2
-uniform vec2 mirror_p3 = vec2(0.0); // Point P2
+uniform vec2 mirror_p1 = vec2(0.0, 0.75); // Point P1 (x, y)
+uniform vec2 mirror_p2 = vec2(0.5, 0.75); // Point P2 (x, y)
+uniform vec2 mirror_p3 = vec2(1.0, 0.75); // Point P2 (x, y)
 
-uniform vec2 mirror_opacity = vec2(1.0, 1.0); // Opacity of the reflection, near to far
-uniform vec2 mirror_blur = vec2(0.0, 0.0); // LOD blur (requires mipmap), near to far
-uniform float mirror_scale = 1.0; // Height ratio of the reflection
-uniform float mirror_over = 0.0; // Layer mirror on top of image, true/false
+uniform vec2 mirror_opacity = vec2(1.0, 1.0); // Reflection opacity, (top, bottom)
+uniform vec2 mirror_blur = vec2(0.0, 0.0); // LOD blur (requires mipmap), (top, bottom)
+uniform float mirror_scale = 1.0; // Reflection height
 
-uniform float scale = 1.0; // Pre-scale image to make room for reflection
-uniform vec2 center = vec2(0.5, 0.0); // Scale center, defaults to centre-top
+uniform vec2 center = vec2(0.5, 0.0); // Scale center, defaults to centre-top (x, y)
+uniform vec2 translate = vec2(0.0, 0.0); // Texture translate (x, y)
+uniform float opacity = 1.0; // Texture opacity
+uniform float scale = 1.0; // Texture scale
 
-// True if uv is outside 0..1 range
-bool is_outside(vec2 uv) {
-    return (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0);
+// Resize uv around center, and translate */
+vec2 resize(vec2 uv) {
+    return (uv - center) / scale + center - translate;
 }
 
-// Return y position of a line (p1,p2) at xpos
-float get_ypos(float xpos, vec2 p1, vec2 p2) {
+// Return the mipmap level used at the given position
+float get_mipmap(vec2 uv) {
+    vec2 dx = dFdx(uv);
+    vec2 dy = dFdy(uv);
+    return 0.5 * log2(max(dot(dx, dx), dot(dy, dy)));
+}
+
+// Return y position of a line (p1, p2) at xpos
+float get_pos(float xpos, vec2 p1, vec2 p2) {
     float w = p2.x - p1.x;
     float h = p2.y - p1.y;
     float x = xpos - p1.x;
@@ -49,44 +69,49 @@ float get_ypos(float xpos, vec2 p1, vec2 p2) {
     return p1.y + y;
 }
 
-// Return y position of line (p1,p2,p3) at uv.x
-float get_y(vec2 uv) {
-    if (uv.x < mirror_p1.x || uv.x > mirror_p3.x) return 1.0;
-    if (uv.x < mirror_p2.x) return get_ypos(uv.x, mirror_p1, mirror_p2);
-    return get_ypos(uv.x, mirror_p2, mirror_p3);
+// Return the y position of line (p1, p2, p3) at uv.x
+float get_line(vec2 uv) {
+    float a = step(uv.x, mirror_p2.x);
+    float b = 1.0 - a;
+    vec2 p1 = a * mirror_p1 + b * mirror_p2;
+    vec2 p2 = a * mirror_p2 + b * mirror_p3;
+    return get_pos(uv.x, p1, p2);
 }
 
 // Alpha composite b over a
 vec4 composite_alpha(vec4 a, vec4 b) {
-    float c = b.a + a.a * (1.0 - b.a);
+    float c = b.a + a.a * (1.0 - b.a) + DELTA; // Delta fixed div/0
     return vec4((b.a * b.rgb + a.a * a.rgb * (1.0 - b.a)) / c, c);
 }
 
+// Return a texture sample at the given position, or transparent if out-of-range
+vec4 sample(vec2 uv, float bias) {
+    float a = step(0.0, uv.x) * step(uv.x, 1.0) * step(0.0, uv.y) * step(uv.y, 1.0);
+    return a * texture2D(texture, uv, bias);
+}
+
 void main() {
-    // scale image to make room for reflection
-    vec2 uv = gl_TexCoord[0].xy;
-    uv = (uv - center) / scale + center;
-    vec4 col = is_outside(uv) ? vec4(0.0) : texture2D(texture, uv);
+    // scale art to make room for reflection
+    vec2 uv = resize(gl_TexCoord[0].xy);
+    vec4 col = sample(uv, 0.0);
 
-    // find mirror boundary
-    float y = get_y(uv);
-    float d = (uv.y - y) / mirror_scale;
+    // distance from mirror boundary
+    float line = get_line(uv);
+    float dist = (uv.y - line) / mirror_scale;
 
-    if (d > 0) {
-        // adjust uv if below the line
-        uv.y = y - d;
+    // invert position
+    vec2 uv2 = vec2(uv.x, line - dist);
+    float bias = mix(mirror_blur.s, mirror_blur.t, dist);
 
-        // compose the reflection colour
-        if (!is_outside(uv)) {
-            float lod = clamp(mix(mirror_blur.s, mirror_blur.t, d), 0.0, 1000.0);
-            float a = clamp(mix(mirror_opacity.s, mirror_opacity.t, d), 0.0, 1.0);
-            vec4 col2 = texture2D(texture, uv, lod) * vec4(vec3(1.0), a);
+    // offset the bias to sample at the same LOD as the art
+    float boff = get_mipmap(uv) - get_mipmap(uv2);
+    vec4 col2 = sample(uv2, bias + boff);
+    col2.a = min(col2.a, sample(uv2, boff).a); // art LOD alpha prevents mipmap bleed
 
-            col = bool(mirror_over)
-                ? composite_alpha(col, col2)
-                : composite_alpha(col2, col);
-        }
-    }
+    // fadeout alpha
+    col2.a *= clamp(mix(mirror_opacity.s, mirror_opacity.t, dist), 0.0, 1.0);
+    col.a *= opacity;
 
-    gl_FragColor = gl_Color * col;
+    // compose image over the reflection
+    gl_FragColor = gl_Color * composite_alpha(col2, col);
 }
