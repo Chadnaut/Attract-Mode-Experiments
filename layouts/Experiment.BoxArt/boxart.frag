@@ -4,7 +4,7 @@
     @summary Draws a reflection under box art images.
     @version 0.2.0 2025-03-27
     @author Chadnaut
-    @url https://github.com/Chadnaut/Attract-Mode-Modules
+    @url https://github.com/Chadnaut/Attract-Mode-Experiments
 
     Pixels below the P1.P2.P3 boundary will be drawn as a mirror reflection.
 
