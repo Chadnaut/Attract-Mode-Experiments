@@ -3,9 +3,12 @@
 > Chadnaut 2024  
 > https://github.com/Chadnaut/Attract-Mode-Experiments
 
+*IMPORTANT - Anti-Aliasing must be set to **None***\
+The shader requires exact pixel values to run correctly!
+
 ![Example](example.png)
 
-Something different with a surface shader feedback loop - falling `sand` art. Catch it with the paddle!
+Something different with a surface shader feedback loop - falling `sand art`. Catch it with the paddle!
 
 ![Example](example2.png)
 
