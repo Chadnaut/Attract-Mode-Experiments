@@ -33,6 +33,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 [LCD]: ./layouts/Experiment.LCD/layout.nut
 [Mallow]: ./layouts/Experiment.Mallow/layout.nut
 [Panorama]: ./layouts/Experiment.Panorama/layout.nut
+[Pitcher]: ./layouts/Experiment.Pitcher/layout.nut
 [Reflection]: ./layouts/Experiment.Reflection/layout.nut
 [RetroZoom]: ./layouts/Experiment.RetroZoom/layout.nut
 [Sand]: ./layouts/Experiment.Sand/README.md
@@ -53,6 +54,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 |[<img width="64" height="42" src="./layouts/Experiment.LCD/example.png"/>](./layouts/Experiment.LCD/example.png)|`v0.0.1`|[LCD] - A shader that pixelates and monotones the image to create an LCD effect.|*Shader*|[Example](./layouts/Experiment.LCD/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.Mallow/example.png"/>](./layouts/Experiment.Mallow/example.png)|`v0.0.1`|[Mallow] - Happy little marshmallows! *Requires AM+ 3.1.0*|*Utility*|[Example](./layouts/Experiment.Mallow/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.Panorama/example.png"/>](./layouts/Experiment.Panorama/example.png)|`v0.0.1`|[Panorama] - A panoramic screen example.|*Shader*|[Example](./layouts/Experiment.Panorama/layout.nut)
+|[<img width="64" height="42" src="./layouts/Experiment.Pitcher/example.png"/>](./layouts/Experiment.Pitcher/example.png)|`v0.0.1`|[Pitcher] - Demo showing sound pitch and volume effects. *Requires AM+ 3.1.0*|*Utility*|[Example](./layouts/Experiment.Pitcher/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.Reflection/example.png"/>](./layouts/Experiment.Reflection/example.png)|`v0.0.1`|[Reflection] - A shader that creates a mipmap based blur effect.|*Shader*|[Example](./layouts/Experiment.Reflection/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.RetroZoom/example.png"/>](./layouts/Experiment.RetroZoom/example.png)|`v0.0.1`|[RetroZoom] - Scale an image over a non-clearing surface to produce a retro zoom effect.|*Utility*|[Example](./layouts/Experiment.RetroZoom/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.Sand/example3.png"/>](./layouts/Experiment.Sand/example3.png)|`v0.0.3`|[Sand] - Something different with a surface shader feedback loop. *Now with Sand, Fire & Plasma!*|*Shader*|[Example](./layouts/Experiment.Sand/layout.nut)
