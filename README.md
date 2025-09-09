@@ -37,6 +37,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 [Reflection]: ./layouts/Experiment.Reflection/layout.nut
 [RetroZoom]: ./layouts/Experiment.RetroZoom/layout.nut
 [Sand]: ./layouts/Experiment.Sand/README.md
+[Segmental]: ./layouts/Experiment.Segmental/layout.nut
 [SpinBox]: ./layouts/Experiment.SpinBox/layout.nut
 [UltraSweep]: ./layouts/Experiment.UltraSweep/layout.nut
 
@@ -58,6 +59,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 |[<img width="64" height="42" src="./layouts/Experiment.Reflection/example.png"/>](./layouts/Experiment.Reflection/example.png)|`v0.0.1`|[Reflection] - A shader that creates a mipmap based blur effect.|*Shader*|[Example](./layouts/Experiment.Reflection/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.RetroZoom/example.png"/>](./layouts/Experiment.RetroZoom/example.png)|`v0.0.1`|[RetroZoom] - Scale an image over a non-clearing surface to produce a retro zoom effect.|*Utility*|[Example](./layouts/Experiment.RetroZoom/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.Sand/example3.png"/>](./layouts/Experiment.Sand/example3.png)|`v0.0.3`|[Sand] - Something different with a surface shader feedback loop. *Now with Sand, Fire & Plasma!*|*Shader*|[Example](./layouts/Experiment.Sand/layout.nut)
+|[<img width="64" height="42" src="./layouts/Experiment.Segmental/example.png"/>](./layouts/Experiment.Segmental/example.png)|`v0.0.1`|[Segmental] - A Clock made with Rectangle segments.|*Element*|[Example](./layouts/Experiment.Segmental/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.SpinBox/example.png"/>](./layouts/Experiment.SpinBox/example.png)|`v0.0.1`|[SpinBox] - A fake 3D spinning box.|*Utility*|[Example](./layouts/Experiment.SpinBox/layout.nut)
 |[<img width="64" height="42" src="./layouts/Experiment.UltraSweep/example.png"/>](./layouts/Experiment.UltraSweep/example.png)|`v0.0.1`|[UltraSweep] - Zero asset light sweep effect.|*Utility*|[Example](./layouts/Experiment.UltraSweep/layout.nut)
 
