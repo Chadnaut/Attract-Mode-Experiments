@@ -34,6 +34,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 [Mallow]: ./layouts/Experiment.Mallow/layout.nut
 [Panorama]: ./layouts/Experiment.Panorama/layout.nut
 [Pitcher]: ./layouts/Experiment.Pitcher/layout.nut
+[Playground]: ./layouts/Experiment.Playground/layout.nut
 [RandomLaunch]: ./plugins/RandomLaunch/plugin.nut
 [Reflection]: ./layouts/Experiment.Reflection/layout.nut
 [RetroZoom]: ./layouts/Experiment.RetroZoom/layout.nut
@@ -57,6 +58,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 |[<img width="64" height="42" src="./layouts/Experiment.Mallow/example.png"/>](./layouts/Experiment.Mallow/example.png)|`v0.0.1`|[Mallow] - Happy little marshmallows! *Requires AM+ 3.1.0*|*Utility*|[Example][Mallow]
 |[<img width="64" height="42" src="./layouts/Experiment.Panorama/example.png"/>](./layouts/Experiment.Panorama/example.png)|`v0.0.1`|[Panorama] - A panoramic screen example.|*Shader*|[Example][Panorama]
 |[<img width="64" height="42" src="./layouts/Experiment.Pitcher/example.png"/>](./layouts/Experiment.Pitcher/example.png)|`v0.0.1`|[Pitcher] - Demo showing sound pitch and volume effects. *Requires AM+ 3.1.0*|*Utility*|[Example][Pitcher]
+|[<img width="64" height="42" src="./layouts/Experiment.Playground/example.png"/>](./layouts/Experiment.Playground/example.png)|`v0.0.1`|[Playground] - Test Artwork properties using a realtime editor.|*Utility*|[Example][Playground]
 |[<img width="64" height="42" src="./plugins/RandomLaunch/example.png"/>](./plugins/RandomLaunch/example.png)|`v0.0.1`|[RandomLaunch] - Randomly select and launch an unplayed game.|*Plugin*|[Example][RandomLaunch]
 |[<img width="64" height="42" src="./layouts/Experiment.Reflection/example.png"/>](./layouts/Experiment.Reflection/example.png)|`v0.0.1`|[Reflection] - A shader that creates a mipmap based blur effect.|*Shader*|[Example][Reflection]
 |[<img width="64" height="42" src="./layouts/Experiment.RetroZoom/example.png"/>](./layouts/Experiment.RetroZoom/example.png)|`v0.0.1`|[RetroZoom] - Scale an image over a non-clearing surface to produce a retro zoom effect.|*Utility*|[Example][RetroZoom]
