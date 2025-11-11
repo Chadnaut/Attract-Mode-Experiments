@@ -1,0 +1,45 @@
+fe.do_nut("util.nut")
+
+init_chart({
+    width = 200,
+    height = 200,
+    bounds = [-4, 4, 4, -4],
+})
+
+local cyan = [0,255,255]
+
+add_chart("abs", @(x) abs(x))
+add_chart("acos", @(x) acos(x))
+add_chart("asin", @(x) asin(x))
+add_chart("atan", @(x) atan(x))
+add_chart("atan2", @(x) atan2(1, x))
+add_chart("ceil", @(x) ceil(x))
+add_chart("ceil2", @(x) ceil2(x), { col = cyan })
+add_chart("clamp", @(x) clamp(x, -2, 2), { col = cyan })
+add_chart("cos", @(x) cos(x))
+add_chart("degrees", @(x) degrees(x), { bounds = [-PI, 180, PI, -180], grid = [1, 45]})
+add_chart("exp", @(x) exp(x))
+add_chart("exp2", @(x) exp2(x), { col = cyan })
+add_chart("fabs", @(x) fabs(x))
+add_chart("floor", @(x) floor(x))
+add_chart("floor2", @(x) floor2(x), { col = cyan })
+add_chart("fract", @(x) fract(x), { col = cyan })
+add_chart("hypot", @(x) hypot(x, 1), { col = cyan })
+add_chart("log", @(x) log(x))
+add_chart("log10", @(x) log10(x))
+add_chart("log2", @(x) log2(x), { col = cyan })
+add_chart("max", @(x) max(x, 2), { col = cyan })
+add_chart("min", @(x) min(x, 2), { col = cyan })
+add_chart("mix", @(x) mix(x, 0, 0.5), { col = cyan })
+add_chart("modulo", @(x) modulo(x, 2), { col = cyan })
+add_chart("pow", @(x) pow(3,x))
+add_chart("radians", @(x) radians(x), { bounds = [-180, PI, 180, -PI], grid = [45, 1], col = cyan })
+add_chart("rand", @(x) rand().tofloat() / RAND_MAX)
+add_chart("random", @(x) random(x, 0), { col = cyan })
+add_chart("randomf", @(x) randomf(x, 0), { col = cyan })
+add_chart("round", @(x) round(x), { col = cyan })
+add_chart("round2", @(x) round2(x), { col = cyan })
+add_chart("sign", @(x) sign(x), { col = cyan })
+add_chart("sin", @(x) sin(x))
+add_chart("sqrt", @(x) sqrt(x))
+add_chart("tan", @(x) tanx(x))

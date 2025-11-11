@@ -2,7 +2,7 @@
  * Experiment.Playground Layout
  *
  * @summary Test Artwork properties using a realtime editor.
- * @version 0.0.1 2025-10-28
+ * @version 0.0.2 2025-10-28
  * @author Chadnaut
  * @url https://github.com/Chadnaut/Attract-Mode-Modules
  *
@@ -110,7 +110,7 @@ info_bottom.margin = info_top.margin = 0
 
 bg.set_rgb(20, 20, 20)
 
-local sidebar_inner = sidebar.add_surface(sidebar.width, flh * 2)
+local sidebar_inner = sidebar.add_surface(sidebar.width, 100 * opt_height) // allow 100 options
 sidebar.alpha = 240
 
 local scrollbar = sidebar.add_rectangle(cw, 0, 5, 0)
@@ -245,11 +245,10 @@ function refresh_mutually_exclusive_props(name) {
 // Hacks
 
 function set_hack(name) {
-    if (!is_legacy) return
     if (name == "video_flags") {
-        // reload legacy artwork when changing video_flags
-        art.index_offset--
-        art.index_offset++
+        // force artwork to reload when changing video_flags
+        art.file_name = ""
+        art.index_offset = art.index_offset
     }
 }
 
