@@ -30,6 +30,7 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 [CubeMap]: ./layouts/Experiment.CubeMap/layout.nut
 [Cylinder]: ./layouts/Experiment.Cylinder/layout.nut
 [DisplayOffset]: ./layouts/Experiment.DisplayOffset/README.md
+[Keyboard]: ./layouts/Experiment.Keyboard/layout.nut
 [LCD]: ./layouts/Experiment.LCD/layout.nut
 [Mallow]: ./layouts/Experiment.Mallow/layout.nut
 [Panorama]: ./layouts/Experiment.Panorama/layout.nut
@@ -46,28 +47,29 @@ These are work-in-progress proof-of-concept experiments. They may be unfinished,
 
 |Preview|Version|Description|Type|Demo|
 |-|-|-|-|-|
-|[<img width="64" height="42" src="./layouts/Experiment.ArtworkRatio/example.png"/>](./layouts/Experiment.ArtworkRatio/example.png)|`v0.0.1`|[ArtworkRatio] - Match an Artworks aspect ratio.|*Utility*|[Example][ArtworkRatio]
-|[<img width="64" height="42" src="./layouts/Experiment.Bezel/example.png"/>](./layouts/Experiment.Bezel/example.png)|`v0.0.1`|[Bezel] - Bezel reflection effects.|*Shader*|[Example][Bezel]
-|[<img width="64" height="42" src="./layouts/Experiment.BoxArt/example.png"/>](./layouts/Experiment.BoxArt/example.png)|`v0.2.0`|[BoxArt] - A Shader that adds a conforming reflection to angled boxart images.|*Shader*|[Example][BoxArt]
-|[<img width="64" height="42" src="./layouts/Experiment.BumpMap/example.png"/>](./layouts/Experiment.BumpMap/example.png)|`v0.0.1`|[BumpMap] - Simple bumpmap effects.|*Shader*|[Example][BumpMap]
-|[<img width="64" height="42" src="./layouts/Experiment.Cathode/example.png"/>](./layouts/Experiment.Cathode/example.png)|`v0.0.1`|[Cathode] - Cubemap, bezel glow, and screen corners.|*Shader*|[Example][Cathode]
-|[<img width="64" height="42" src="./layouts/Experiment.Clock/example.png"/>](./layouts/Experiment.Clock/example.png)|`v0.0.1`|[Clock] - A realtime animated clock.|*Element*|[Example][Clock]
-|[<img width="64" height="42" src="./layouts/Experiment.CubeMap/example.png"/>](./layouts/Experiment.CubeMap/example.png)|`v0.0.1`|[CubeMap] - Cubemap distortion effects.|*Shader*|[Example][CubeMap]
-|[<img width="64" height="42" src="./layouts/Experiment.Cylinder/example.png"/>](./layouts/Experiment.Cylinder/example.png)|`v0.0.1`|[Cylinder] - A cylinder effect.|*Shader*|[Example][Cylinder]
-|[<img width="64" height="42" src="./layouts/Experiment.DisplayOffset/example.png"/>](./layouts/Experiment.DisplayOffset/example.png)|`v0.0.2`|[DisplayOffset] - Adds a `display_offset` property which is used to shift assets by display. *Currently Broken.*|*Utility*|[Example][DisplayOffset]
-|[<img width="64" height="42" src="./layouts/Experiment.LCD/example.png"/>](./layouts/Experiment.LCD/example.png)|`v0.0.1`|[LCD] - A shader that pixelates and monotones the image to create an LCD effect.|*Shader*|[Example][LCD]
-|[<img width="64" height="42" src="./layouts/Experiment.Mallow/example.png"/>](./layouts/Experiment.Mallow/example.png)|`v0.0.1`|[Mallow] - Happy little marshmallows! *Requires AM+ 3.1.0*|*Utility*|[Example][Mallow]
-|[<img width="64" height="42" src="./layouts/Experiment.Panorama/example.png"/>](./layouts/Experiment.Panorama/example.png)|`v0.0.1`|[Panorama] - A panoramic screen example.|*Shader*|[Example][Panorama]
-|[<img width="64" height="42" src="./layouts/Experiment.Pitcher/example.png"/>](./layouts/Experiment.Pitcher/example.png)|`v0.0.1`|[Pitcher] - Demo showing sound pitch and volume effects. *Requires AM+ 3.1.0*|*Utility*|[Example][Pitcher]
-|[<img width="64" height="42" src="./layouts/Experiment.Playground/example.png"/>](./layouts/Experiment.Playground/example.png)|`v0.0.2`|[Playground] - Test Artwork properties using a realtime editor.|*Utility*|[Example][Playground]
-|[<img width="64" height="42" src="./layouts/Experiment.Plotter/example.png"/>](./layouts/Experiment.Plotter/example.png)|`v0.0.2`|[Plotter] - Plot charts to test math and easing functions.|*Utility*|[Example][Plotter]
-|[<img width="64" height="42" src="./plugins/RandomLaunch/example.png"/>](./plugins/RandomLaunch/example.png)|`v0.0.1`|[RandomLaunch] - Randomly select and launch an unplayed game.|*Plugin*|[Example][RandomLaunch]
-|[<img width="64" height="42" src="./layouts/Experiment.Reflection/example.png"/>](./layouts/Experiment.Reflection/example.png)|`v0.0.1`|[Reflection] - A shader that creates a mipmap based blur effect.|*Shader*|[Example][Reflection]
-|[<img width="64" height="42" src="./layouts/Experiment.RetroZoom/example.png"/>](./layouts/Experiment.RetroZoom/example.png)|`v0.0.1`|[RetroZoom] - Scale an image over a non-clearing surface to produce a retro zoom effect.|*Utility*|[Example][RetroZoom]
-|[<img width="64" height="42" src="./layouts/Experiment.Sand/example3.png"/>](./layouts/Experiment.Sand/example3.png)|`v0.0.3`|[Sand] - Something different with a surface shader feedback loop. *Now with Sand, Fire & Plasma!*|*Shader*|[Example][Sand]
-|[<img width="64" height="42" src="./layouts/Experiment.Segmental/example.png"/>](./layouts/Experiment.Segmental/example.png)|`v0.0.1`|[Segmental] - A Clock made with Rectangle segments.|*Element*|[Example][Segmental]
-|[<img width="64" height="42" src="./layouts/Experiment.SpinBox/example.png"/>](./layouts/Experiment.SpinBox/example.png)|`v0.0.1`|[SpinBox] - A fake 3D spinning box.|*Utility*|[Example][SpinBox]
-|[<img width="64" height="42" src="./layouts/Experiment.UltraSweep/example.png"/>](./layouts/Experiment.UltraSweep/example.png)|`v0.0.1`|[UltraSweep] - Zero asset light sweep effect.|*Utility*|[Example][UltraSweep]
+|[<img width="64" height="42" src="./layouts/Experiment.ArtworkRatio/example.png"/>][ArtworkRatio]|`v0.0.1`|[ArtworkRatio] - Match an Artworks aspect ratio.|*Utility*|[Example][ArtworkRatio]
+|[<img width="64" height="42" src="./layouts/Experiment.Bezel/example.png"/>][Bezel]|`v0.0.1`|[Bezel] - Bezel reflection effects.|*Shader*|[Example][Bezel]
+|[<img width="64" height="42" src="./layouts/Experiment.BoxArt/example.png"/>][BoxArt]|`v0.2.0`|[BoxArt] - A Shader that adds a conforming reflection to angled boxart images.|*Shader*|[Example][BoxArt]
+|[<img width="64" height="42" src="./layouts/Experiment.BumpMap/example.png"/>][BumpMap]|`v0.0.1`|[BumpMap] - Simple bumpmap effects.|*Shader*|[Example][BumpMap]
+|[<img width="64" height="42" src="./layouts/Experiment.Cathode/example.png"/>][Cathode]|`v0.0.1`|[Cathode] - Cubemap, bezel glow, and screen corners.|*Shader*|[Example][Cathode]
+|[<img width="64" height="42" src="./layouts/Experiment.Clock/example.png"/>][Clock]|`v0.0.1`|[Clock] - A realtime animated clock.|*Element*|[Example][Clock]
+|[<img width="64" height="42" src="./layouts/Experiment.CubeMap/example.png"/>][CubeMap]|`v0.0.1`|[CubeMap] - Cubemap distortion effects.|*Shader*|[Example][CubeMap]
+|[<img width="64" height="42" src="./layouts/Experiment.Cylinder/example.png"/>][Cylinder]|`v0.0.1`|[Cylinder] - A cylinder effect.|*Shader*|[Example][Cylinder]
+|[<img width="64" height="42" src="./layouts/Experiment.DisplayOffset/example.png"/>][DisplayOffset]|`v0.0.2`|[DisplayOffset] - Adds a `display_offset` property which is used to shift assets by display. *Currently Broken.*|*Utility*|[Example][DisplayOffset]
+|[<img width="64" height="42" src="./layouts/Experiment.Keyboard/example.png"/>][Keyboard]|`v1.0.0`|[Keyboard] - Test keyboard, mouse, and joystick inputs.|*Utility*|[Example][Keyboard]
+|[<img width="64" height="42" src="./layouts/Experiment.LCD/example.png"/>][LCD]|`v0.0.1`|[LCD] - A shader that pixelates and monotones the image to create an LCD effect.|*Shader*|[Example][LCD]
+|[<img width="64" height="42" src="./layouts/Experiment.Mallow/example.png"/>][Mallow]|`v0.0.1`|[Mallow] - Happy little marshmallows! *Requires AM+ 3.1.0*|*Utility*|[Example][Mallow]
+|[<img width="64" height="42" src="./layouts/Experiment.Panorama/example.png"/>][Panorama]|`v0.0.1`|[Panorama] - A panoramic screen example.|*Shader*|[Example][Panorama]
+|[<img width="64" height="42" src="./layouts/Experiment.Pitcher/example.png"/>][Pitcher]|`v0.0.1`|[Pitcher] - Demo showing sound pitch and volume effects. *Requires AM+ 3.1.0*|*Utility*|[Example][Pitcher]
+|[<img width="64" height="42" src="./layouts/Experiment.Playground/example.png"/>][Playground]|`v0.0.2`|[Playground] - Test Artwork properties using a realtime editor.|*Utility*|[Example][Playground]
+|[<img width="64" height="42" src="./layouts/Experiment.Plotter/example.png"/>][Plotter]|`v0.0.2`|[Plotter] - Plot charts to test math and easing functions.|*Utility*|[Example][Plotter]
+|[<img width="64" height="42" src="./plugins/RandomLaunch/example.png"/>][RandomLaunch]|`v0.0.1`|[RandomLaunch] - Randomly select and launch an unplayed game.|*Plugin*|[Example][RandomLaunch]
+|[<img width="64" height="42" src="./layouts/Experiment.Reflection/example.png"/>][Reflection]|`v0.0.1`|[Reflection] - A shader that creates a mipmap based blur effect.|*Shader*|[Example][Reflection]
+|[<img width="64" height="42" src="./layouts/Experiment.RetroZoom/example.png"/>][RetroZoom]|`v0.0.1`|[RetroZoom] - Scale an image over a non-clearing surface to produce a retro zoom effect.|*Utility*|[Example][RetroZoom]
+|[<img width="64" height="42" src="./layouts/Experiment.Sand/example3.png"/>][Sand]|`v0.0.3`|[Sand] - Something different with a surface shader feedback loop. *Now with Sand, Fire & Plasma!*|*Shader*|[Example][Sand]
+|[<img width="64" height="42" src="./layouts/Experiment.Segmental/example.png"/>][Segmental]|`v0.0.1`|[Segmental] - A Clock made with Rectangle segments.|*Element*|[Example][Segmental]
+|[<img width="64" height="42" src="./layouts/Experiment.SpinBox/example.png"/>][SpinBox]|`v0.0.1`|[SpinBox] - A fake 3D spinning box.|*Utility*|[Example][SpinBox]
+|[<img width="64" height="42" src="./layouts/Experiment.UltraSweep/example.png"/>][UltraSweep]|`v0.0.1`|[UltraSweep] - Zero asset light sweep effect.|*Utility*|[Example][UltraSweep]
 
 ## Looking for More?
 
