@@ -2,7 +2,7 @@
     BoxArt Reflection Shader
 
     @summary Draws a reflection under box art images.
-    @version 0.2.0 2025-03-27
+    @version 0.3.0 2026-02-23
     @author Chadnaut
     @url https://github.com/Chadnaut/Attract-Mode-Experiments
 
@@ -47,6 +47,7 @@ uniform vec2 center = vec2(0.5, 0.0); // Scale center, defaults to centre-top (x
 uniform vec2 translate = vec2(0.0, 0.0); // Texture translate (x, y)
 uniform float opacity = 1.0; // Texture opacity
 uniform float scale = 1.0; // Texture scale
+uniform float debug = 0.0; // If > 0 draw a green line on the mirror edge
 
 // Resize uv around center, and translate */
 vec2 resize(vec2 uv) {
@@ -114,4 +115,9 @@ void main() {
 
     // compose image over the reflection
     gl_FragColor = gl_Color * composite_alpha(col2, col);
+
+    // debug line to help mirror placement
+    if (bool(debug) && dist > 0.0 && dist < debug) {
+        gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+    }
 }
